@@ -1,6 +1,6 @@
 ---
-title: "Multi-Factor Authentication (MFA): The Ultimate Guide"
-description: What is multi-factor authentication and how it works?
+title: "What is Multi-Factor Authentication (MFA) and How it Works"
+description: Learn what MFA is, why it's crucial, the available factors, and when to consider requiring multi-factor authentication for enhanced security.
 author: Dan Moore
 section: Authentication
 tags: mfa 2fa multi-factor-authentication two-factor-authentication user-experience customer-experience security policie sms totp factors ap-push tradeoffs open-standards biometric
@@ -179,7 +179,7 @@ Below is a diagram displaying estimated relative deployment and security attribu
 
 Let's look at each category and examine the factors in more detail.
 
-### Posession: What You Have
+### Possession: What You Have
 
 Having possession of a physical object or access to a separate user account can be a secure authentication factor. The out of band communication of a one time code is also a form of "what you have".
 
@@ -276,7 +276,7 @@ As a developer, avoid this factor. If you must implement it, let the user provid
 
 Like all factors, you could use this option as part of defense in depth solution, in combination with other factors.
 
-Counsel your users to answer these questions wisely. Frankly, they should pick fake answers. For example, if a question is "what was your first pet's name", and their first pet's name was Fluffy, pick anything other than "Fluffy". Anything. Perhaps "fido" or "killer". 
+Counsel your users to answer these questions wisely. Frankly, they should pick fake answers. For example, if a question is "what was your first pet's name", and their first pet's name was Fluffy, pick anything other than "Fluffy". Anything. Perhaps "spot" or "killer". 
 
 If the user is saving these answers in a password manager, I would even suggest "h941TphXOL3h0ws7M0U2" or "relevance-middle-yellow-horoscope". The goal is to prevent someone from learning the name of a childhood pet from a Facebook post and using that information to gain illicit access. 
 

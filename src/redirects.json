@@ -1,5 +1,6 @@
 {
   "redirects": {
+    "/articles/identity-basics/hosted-login-vs-api-login": "/docs/get-started/core-concepts/hosted-login-vs-api-login",
     "/articles/oauth/what-is-oauth": "/articles/oauth/modern-guide-to-oauth",
     "/blog/archive/category/announcement": "/blog/category/news",
     "/blog/archive/category/article": "/blog/category/education",
@@ -11,6 +12,7 @@
     "/cognito": "/docs/lifecycle/migrate-users/bulk/cognito",
     "/dev-tools/jwt-debugger": "/dev-tools/jwt-decoder",
     "/docs/getting-started": "/docs/get-started/",
+    "/docs/get-started/core-concepts/editions-features": "/docs/get-started/core-concepts/plans-features",
     "/docs/customize/look-and-feel/cli": "/docs/customize/cli",
     "/docs/lifecycle/migrate-users/scim/scim": "/docs/lifecycle/migrate-users/scim",
     "/docs/extend/events-and-webhooks/kafka/kafka": "/docs/extend/events-and-webhooks/kafka",
@@ -127,7 +129,6 @@
     "/docs/v1/tech/apis/users": "/docs/apis/users",
     "/docs/v1/tech/apis/webauthn": "/docs/apis/webauthn",
     "/docs/v1/tech/apis/webhooks": "/docs/apis/webhooks",
-    "/docs/v1/tech/archive/apis/system": "/docs/archive/apis/system-1-29",
     "/docs/v1/tech/archive/release-notes": "/docs/archive/release-notes",
     "/docs/v1/tech/client-libraries/": "/docs/sdks/",
     "/docs/v1/tech/client-libraries/angular-sdk": "/docs/sdks/angular-sdk",
@@ -438,6 +439,7 @@
     "/docs/quickstarts/quickstart-springboot-web": "/docs/quickstarts/quickstart-java-springboot-web",
     "/features/advanced-registration-forms": "/platform/registration-forms",
     "/features/architecture": "/platform/built-for-developers",
+    "/features/authentication": "/platform/authentication",
     "/features/breached-password-detection": "/features/authentication",
     "/features/built-for-developers": "/platform/built-for-developers",
     "/features/connectors": "/features/authentication",
@@ -501,6 +503,7 @@
     "/docs/apis/entities/": true,
     "/docs/apis/identity-providers/": true,
     "/docs/apis/messengers/": true,
+    "/docs/apis/themes/": true,
     "/docs/apis/scim/": true,
     "/docs/archive/": true,
     "/docs/archive/apis/": true,
@@ -605,13 +608,14 @@
     ["/learn/expert-advice/authentication/spa", "/articles/login-authentication-workflows/spa"],
     ["/learn/expert-advice/authentication/mobile", "/articles/login-authentication-workflows/mobile"],
     ["/learn/expert-advice/authentication/webapp", "/articles/login-authentication-workflows/webapp"],
-    ["/learn/expert-advice", "/articles"]
+    ["/learn/expert-advice", "/articles"],
+    ["/community/forum/category", "/community/forum/categories"]
   ],
   "redirectsByRegex": [
     ["^/blog/(category|tag|author)/([^/]*)$", "$&/"],
     ["/blog/archive/tag/", "/blog/tag/"],
     ["/blog/\\d\\d\\d\\d/\\d\\d/\\d\\d/", "/blog/"]
   ],
-  "s3Paths": ["/404", "/direct-download", "/license", "/license-update"],
+  "s3Paths": ["/404", "/direct-download", "/license"],
   "s3Prefixes": ["/articles/", "/blog/", "/dev-tools/", "/docs/", "/landing/", "/legal/"]
 }

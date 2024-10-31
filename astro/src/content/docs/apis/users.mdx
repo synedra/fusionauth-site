@@ -12,7 +12,8 @@ import GenericUpdateExplanationFragment from 'src/content/docs/apis/_generic-upd
 import ImportUsersRequestBody from 'src/content/docs/apis/_import-users-request-body.mdx';
 import InlineField from 'src/components/InlineField.astro';
 import JSON from 'src/components/JSON.astro';
-import PremiumEditionBlurbApi from 'src/content/docs/_shared/_premium-edition-blurb-api.astro';
+import PremiumPlanBlurbApi from 'src/content/docs/_shared/_premium-plan-blurb-api.astro';
+import EnterprisePlanBlurbApi from 'src/content/docs/_shared/_enterprise-plan-blurb-api.astro';
 import {RemoteCode} from '@fusionauth/astro-components';
 import ScrollRef from 'src/components/ScrollRef.astro';
 import SearchPreprocessingWarning from "src/content/docs/_shared/_search-preprocessing-warning.mdx";
@@ -338,7 +339,7 @@ The response for this API contains the information for the User that was reactiv
 
 ## Import Users
 
-This API is used to bulk import multiple Users into FusionAuth. Each User must have at least an **email** or a **username**. This request is useful for migrating data from an existing database into FusionAuth. Additionally, you can provide an Id for each User inside the JSON User object of the request body. When using this API you should import with batches of less than 10,000 users per request. After completing an import you should [reindex of the Elasticsearch database](/docs/lifecycle/manage-users/search/search#reindexing-elasticsearch) as well. 
+This API is used to bulk import multiple Users into FusionAuth. Each User must have at least an **email** or a **username**. This request is useful for migrating data from an existing database into FusionAuth. Additionally, you can provide an Id for each User inside the JSON User object of the request body. When using this API you should import with batches of less than 10,000 users per request. After completing an import you should [reindex of the Elasticsearch database](/docs/lifecycle/manage-users/search/search#reindexing-elasticsearch) as well.
 
 ### Request
 
@@ -367,7 +368,7 @@ The standard FusionAuth password hashing schemes require the password hash to be
 It is recommended to use a base64 encoded string, but if importing hashes from a legacy system that uses base16, base32, or another encoding, import the hash in the same format the plugin produces.
 
 <RemoteCode lang="ruby" title="Example of Converting a Base16 Password Hash Value to Base64"
-            url="https://raw.githubusercontent.com/FusionAuth/fusionauth-example-scripts/master/import-helpers/convert-md5-hexadecimal-to-base64.rb" />
+            url="https://raw.githubusercontent.com/FusionAuth/fusionauth-example-scripts/main/import-helpers/convert-md5-hexadecimal-to-base64.rb" />
 
 ### Bcrypt
 
@@ -390,7 +391,7 @@ MD5 is commonly stored in hexadecimal format, such as `25d55ad283aa400af464c76d7
 Here is an example ruby script to convert hexadecimal values to base64 encoded:
 
 <RemoteCode lang="ruby" title="Convert a Hexadecimal Password Hash Value to Base64"
-            url="https://raw.githubusercontent.com/FusionAuth/fusionauth-example-scripts/master/import-helpers/convert-md5-hexadecimal-to-base64.rb" />
+            url="https://raw.githubusercontent.com/FusionAuth/fusionauth-example-scripts/main/import-helpers/convert-md5-hexadecimal-to-base64.rb" />
 
 
 ## Import Refresh Tokens
@@ -574,37 +575,37 @@ The response will contain recent logins containing no more than the value set by
   <APIField name="logins[x].location.city" type="String" since="1.30.0">
     The city where the login request originated.
 
-<PremiumEditionBlurbApi feature="login location" />
+<EnterprisePlanBlurbApi feature="login location" />
 
   </APIField>
   <APIField name="logins[x].location.country" type="String" since="1.30.0">
     The country where the login request originated.
 
-<PremiumEditionBlurbApi feature="login location" />
+<EnterprisePlanBlurbApi feature="login location" />
 
   </APIField>
   <APIField name="logins[x].location.latitude" type="Double" since="1.30.0">
     The latitude where the login request originated.
 
-<PremiumEditionBlurbApi feature="login location" />
+<EnterprisePlanBlurbApi feature="login location" />
 
   </APIField>
   <APIField name="logins[x].location.longitude" type="Double" since="1.30.0">
     The longitude where the login request originated.
 
-<PremiumEditionBlurbApi feature="login location" />
+<EnterprisePlanBlurbApi feature="login location" />
 
   </APIField>
   <APIField name="logins[x].location.region" type="String" since="1.30.0">
     The geographic location where the login request originated.
 
-<PremiumEditionBlurbApi feature="login location" />
+<EnterprisePlanBlurbApi feature="login location" />
 
   </APIField>
   <APIField name="logins[x].location.zipcode" type="String" since="1.30.0">
     The zipcode where the login request originated.
 
-<PremiumEditionBlurbApi feature="login location" />
+<EnterprisePlanBlurbApi feature="login location" />
 
   </APIField>
   <APIField name="logins[x].loginId" type="String">
@@ -632,9 +633,9 @@ This API is used to mark a User's email as verified. This is usually called afte
   <APIField name="verificationId" type="String" required deprecated>
     The verification Id generated by FusionAuth used to verify the User's registration is valid by ensuring they have access to the provided email address.
 
-    <DeprecatedSince since="1.28.0" />
-
+    <DeprecatedSince since="1.28.0">
     This value can still be provided on the URL segment as shown in the above example, but it is recommended you send this value in the request body instead using the <InlineField>verificationId</InlineField> field. If the value is provided in the URL segment and in the request body, the value provided in the request body will be preferred.
+    </DeprecatedSince>
   </APIField>
 </APIBlock>
 
@@ -736,7 +737,7 @@ When authenticated using an API key a response body will be provided. If an API 
   <APIField name="verificationOneTimeCode" type="String">
     Depending on your tenant configuration, this may be returned. The verification One Time Code is used with the gated Email Verification workflow. The user enters this code to verify their email.
 
-<PremiumEditionBlurbApi feature="gated email" />
+<PremiumPlanBlurbApi feature="gated email" />
 
 
   </APIField>
@@ -776,7 +777,7 @@ If FusionAuth sends an email to the user, it will either use the `email` top lev
     The login identifier of the user. The login identifier can be either the `email` or the `username`. The username is not case sensitive.
   </APIField>
   <APIField name="state" type="Object" optional>
-    An optional object that will be returned un-modified when you complete the forgot password request. This may be useful to return the user to particular state once they complete the password change.
+    An optional object that will be returned un-modified when you complete the forgot password request using the [Change a User's Password API](#change-a-users-password). This may be useful to return the user to particular state once they complete the password change.
   </APIField>
 </APIBlock>
 
@@ -816,7 +817,10 @@ If FusionAuth sends an email to the user, it will either use the `email` top lev
 
 ### Response
 
-*Response Codes*
+{/*
+this 'response codes' header has extra spacing, but to fix we'd have to convert the below table into a HTML table inside an astro component, like we did with astro/src/content/docs/apis/_change-pass-response-codes.astro
+*/}
+<i class="mb-0">Response Codes</i>
 |Code |Description |
 | --- | --- |
 |200 |The request was successful. A JSON response body will be provided when authenticated using an API key, when the API key has been omitted from the request, no response body is provided. |
@@ -847,7 +851,7 @@ This API may be used as the second part of the Forgot Password workflow. For exa
 
 This API may also be used separately from the Forgot Password workflow by omitting the `changePasswordId` and using the `loginId` instead.
 
-By default the `changePasswordId` is valid for 10 minutes after it was generated. If a `404` is returned when using the change password Id, the workflow will need to be started again to generate a new identifier. This duration can be modified using the System Configuration API or in the FusionAuth UI.
+By default the `changePasswordId` is valid for 10 minutes after it was generated. If a `404` is returned when using the change password Id, the workflow will need to be started again to generate a new identifier. This duration can be modified using the [Tenant API](/docs/apis/tenants) or in the admin UI.
 
 
 <Aside type="note">
@@ -871,9 +875,9 @@ This usage is generally intended to be part of an email workflow and does not re
 
     If this `changePasswordId` was sent via an email to the User by FusionAuth during User create in order to set up a new password, or as part of a Forgot Password request, then successful use of this identifier to change the User's password will implicitly complete Email Verification if not already verified and the Tenant configuration has enabled implicit email verification.
 
-    <DeprecatedSince since="1.33.0" />
-
+    <DeprecatedSince since="1.33.0">
     This value can still be provided on the URL segment as shown in the above example, but it is recommended you send this value in the request body instead using the <InlineField>changePasswordId</InlineField> field. If the value is provided in the URL segment and in the request body, the value provided in the request body will be preferred.
+    </DeprecatedSince>
   </APIField>
 </APIBlock>
 
@@ -982,17 +986,20 @@ For this reason, this API will return a `oneTimePassword` that is intended to be
 
 ### Response
 
-*Response Codes*
-
 <ChangePassResponseCodes />
 
 #### Response Body
 
+This JSON response body will only be returned when using a `changePasswordId` parameter or a JWT to change the password.
+
+When calling this API with an API key no response body will be returned.
+
 <APIBlock>
   <APIField name="oneTimePassword" type="String" since="1.5.0">
     A one time password that can be used as a substitute for your `loginId` and `password` on the Login API.
-
-    This JSON response body will only be returned when using a `changePasswordId` or JWT to change the password. When calling this API with an API key no response body will be returned.
+  </APIField>
+  <APIField name="state" type="Object" since="1.5.0">
+    An optional object that is returned un-modified when the forgot password request is completed. This may be useful to return the user to particular state once they complete the password change.
   </APIField>
 </APIBlock>
 
