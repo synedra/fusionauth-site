@@ -21,17 +21,30 @@ interface QuickStartSection {
 }
 
 const qsSections: QuickStartSection[] = [
+  
   {
-      key: 'five-minute',
-      icon: '/img/icons/qs-main.svg',
+    key: 'install',
+    icon: '/img/icons/download-fusionauth.svg',
+    faIcon: 'fa-code-simple',
+    color: 'indigo',
+    title: 'Install and Launch FusionAuth',
+    anchorTag: 'install',
+    desc: 'Install and launch FusionAuth from docker, the cloud, or on your local system.',
+    articles: [
+    ],
+  },
+  {
+      key: 'setup',
+      icon: '/img/icons/configure.svg',
       faIcon: 'fa-code-simple',
       color: 'indigo',
-      title: '5-minute Guides',
-      anchorTag: '5-minute',
-      desc: 'Guides for getting up and running quickly',
+      title: 'Run Fusionauth',
+      anchorTag: 'setup',
+      desc: 'Setup your Fusionauth installation integrated with a complete application or through the APIs.',
       articles: [
       ],
   },
+
   {
     key: 'web',
     icon: '/img/icons/web-application.svg',
@@ -73,6 +86,17 @@ const qsSections: QuickStartSection[] = [
     title: 'Backend/API',
     anchorTag: 'api',
     desc: 'An API or service protected by FusionAuth and access tokens',
+    articles: [
+    ],
+  },
+  {
+    key: 'examples',
+    icon: '/img/icons/web-application.svg',
+    faIcon: 'fa-binary',
+    color: 'green',
+    title: 'Examples',
+    anchorTag: 'examples',
+    desc: 'Example apps',
     articles: [
     ],
   },

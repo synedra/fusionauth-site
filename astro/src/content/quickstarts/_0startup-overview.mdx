@@ -1,21 +1,25 @@
 ---
-title: 5-Minute Guide
+title: Installing and Running Fusionauth - Overview
 description: This guide will walk you through the steps required to use FusionAuth for login and logout.
-section: five-minute
-icon: /img/icons/5-minute-2.svg
+section: install
+icon: /img/icons/install-configure.svg
 faIcon: fa-gem
 color: rose
 cta: EmailListCTA
 ---
 import BlogButton from 'src/components/BlogButton.astro';
 import FiveMinuteNextSteps from 'src/content/quickstarts/_5-minute-next-steps.mdx';
+import LoginArchitectureSdk from 'src/content/quickstarts/LoginArchitectureSdk.astro';
 
 Welcome! At the end of this guide, you will know how to add login (sign in) and logout (sign out) to a Node.js application, using Express and Pug.
 
 ## Intro to FusionAuth 
 
-
 When using FusionAuth, when your user begins the authentication process, you typically send them to FusionAuth. FusionAuth authenticates them and returns them to your application with a token indicating the login was successful.
+
+## General Architecture
+
+<LoginArchitectureSdk />
 
 With this architecture:
 
@@ -30,19 +34,29 @@ FusionAuth is available both as an installable piece of software and a SaaS serv
 
 One of FusionAuth's unique attributes is the variety of places you can install it. Bare metal, cloud, container: yup. Windows, macOS, Linux: sure! You can learn more about [different options in the installation guide](/docs/get-started/download-and-install). But for this guide, you'll pick one of three options.
 
-Please choose an option below to explore FusionAuth.
+First, please choose a launch option to get your FusionAuth instance up and running:
 
-<BlogButton label="Docker" href="/docs/quickstarts/5-minute-docker" /><span class="mr-3" />
-<BlogButton label="FastPath" href="/docs/quickstarts/5-minute-fastpath" /><span class="mr-3" />
-<BlogButton label="Sandbox" href="/docs/quickstarts/5-minute-sandbox" />
+<BlogButton label="Gitpod" href="/docs/quickstarts/launch-cloud" /><span class="mr-3" />
+<BlogButton label="Docker" href="/docs/quickstarts/launch-docker" /><span class="mr-3" />
+<BlogButton label="Local" href="/docs/quickstarts/launch-local" /><span class="mr-3" />
 
+* [Gitpod](/docs/quickstarts/launch-cloud) creates a cloud-hosted instance for FusionAuth.  This means you don't need to install anything on your local system.  Works best in Chrome.
 * [Docker](/docs/quickstarts/5-minute-docker) requires docker and docker compose. This is the best choice if you have docker and docker compose installed.
-* [FastPath](/docs/quickstarts/5-minute-fastpath) requires a local database (PostgreSQL or MySQL). This is the best option if you have a local MySQL or PostgreSQL database installed and want to get the full installation experience.
-* [The sandbox](/docs/quickstarts/5-minute-sandbox), which is a public shared location, with data **regularly wiped**. This is the best choice if you don't want to install anything and are okay with other people seeing your test users, applications and data. However, this choice is the quickest way to test drive an integration with FusionAuth without installing anything.
+* [Local](/docs/quickstarts/5-minute-fastpath) requires a local database (such as PostgreSQL). This is the best option if you have a local database installed and want to get the full installation experience.
 
-Each of these options will end up at the same place; you'll have a functioning application with login and logout provided by FusionAuth.
+Each of these options will end up at the same place; you'll be ready to interact with FusionAuth to manage access to an application.
 
-Afterwards, you can dig deeper into a number of areas.
+The second step is to pick the kind of interaction you want to have:
+
+<BlogButton label="Web" href="/docs/quickstarts/setup-web" />
+<BlogButton label="Docker" href="/docs/quickstarts/setup-api" />
+
+* [Web](/docs/quickstarts/setup-web) uses the FusionAuth web interface to configure access for your website.
+* [API](/docs/quickstarts/setup-api) lets you look under the hood and make your configuration changes via FusionAuth's API.
+
+Feel free to try both to build up your FusionAuth knowledge.
+
+After you've finished the Startup modules, you can dig deeper into a number of areas.
 
 ## Next Steps
 
