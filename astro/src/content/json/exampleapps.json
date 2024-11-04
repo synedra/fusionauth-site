@@ -109,7 +109,7 @@
     "description": "Family management and consent creation",
     "language": "javascript",
     "icon": "/img/icons/javascript.svg",
-    "tags":["family", "consent","examples"]
+    "tags":["family", "consents","examples"]
   },
   {
     "url": "https://github.com/FusionAuth/fusionauth-example-device-grant",
@@ -173,7 +173,7 @@
     "description": "Docker Compose examples, different ways to configure and run FusionAuth",
     "language": "config",
     "icon": "/img/icons/5minute-docker.svg",
-    "tags":["docker compose", "docker","examples"]
+    "tags":["docker","examples"]
   },
   {
     "url": "https://github.com/FusionAuth/fusionauth-theme-helper",
@@ -205,7 +205,7 @@
     "description": "Changebank theme CSS stylesheet",
     "language": "themes",
     "icon": "/img/icons/security.svg",
-    "tags":["css","stylesheet","examples"]
+    "tags":["css","examples"]
   },
   {
     "url": "https://github.com/FusionAuth/fusionauth-contrib",
@@ -221,7 +221,7 @@
     "description": "Docker build scripts",
     "language": "config",
     "icon": "/img/icons/5minute-docker.svg",
-    "tags":["docker","docker compose","examples"]
+    "tags":["docker","examples"]
   },
   {
     "url": "https://github.com/FusionAuth/fusionauth-example-flask-portal",
@@ -369,7 +369,6 @@
     "description": "Stores FusionAuth webhook events to S3 using the CDK to manage infra",
     "language": "java",
     "icon": "/img/icons/spring.svg",
-    
     "tags":["examples","webhooks","s3"]
   },
   {
@@ -385,7 +384,6 @@
     "name": "Game with a cross-platform login experience",
     "description": "Example game which runs on both Windows and Android.",
     "icon": "/img/icons/flutter.svg",
-    
     "language": "dart",
     "tags":["cross platform","examples"]
   },
@@ -395,7 +393,7 @@
     "description": "Node/express app which uses Twitter for authentication",
     "language": "javascript",
     "icon": "/img/icons/express.svg",
-    "tags":["social","federated","twitter","examples","express"]
+    "tags":["social","twitter","examples","express"]
   },
   {
     "url": "https://github.com/FusionAuth/fusionauth-example-nextjs-magic-links",
@@ -403,7 +401,7 @@
     "description": "Next.js app which uses magic links for authentication",
     "icon": "/img/icons/nextjs.svg",
     "language": "javascript",
-    "tags":["examples","magic links","nextjs"]
+    "tags":["examples","magic links","next.js"]
   },
   {
     "url": "https://github.com/FusionAuth/fusionauth-example-express-consents",
@@ -532,7 +530,7 @@
     "description": "JavaScript NextJS quickstart tutorial showing how to integrate FusionAuth with a JavaScript NextJS application",
     "icon": "/img/icons/nextjs.svg",
     "language": "javascript",
-    "tags":["quickstart"]
+    "tags":["quickstart","next.js"]
   },
   {
     "url": "https://github.com/FusionAuth/fusionauth-quickstart-javascript-remix-web",
@@ -747,7 +745,7 @@
     "language": "integration",
     "icon": "/img/icons/nextjs.svg",
     
-    "tags":["examples","nextjs","javascript"]
+    "tags":["examples","next.js","javascript"]
   },
   {
     "url": "https://github.com/FusionAuth/fusionauth-example-terraform",
