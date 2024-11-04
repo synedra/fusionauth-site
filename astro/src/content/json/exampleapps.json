@@ -763,8 +763,7 @@
     "description": "PHP Laravel API quickstart tutorial showing how to integrate FusionAuth with a PHP Laravel API",
     "language": "php",
     "tags":["quickstart"],
-    "icon": "/img/icons/laravel.svg",
-    
+    "icon": "/img/icons/laravel.svg"
   },
   {
     "url": "https://github.com/FusionAuth/fusionauth-example-device-limit-simple",
